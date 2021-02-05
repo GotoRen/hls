@@ -1,4 +1,22 @@
 # HTTP Live Streaming Configuration
+## 🌱 Environment
+- Ubuntu Linux 20.04 LTS
+  ```
+  NAME="Ubuntu"
+  VERSION="20.04.1 LTS (Focal Fossa)"
+  ID=ubuntu
+  ID_LIKE=debian
+  PRETTY_NAME="Ubuntu 20.04.1 LTS"
+  VERSION_ID="20.04"
+  HOME_URL="https://www.ubuntu.com/"
+  SUPPORT_URL="https://help.ubuntu.com/"
+  BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+  PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+  VERSION_CODENAME=focal
+  UBUNTU_CODENAME=focal
+  ```
+- Execution by UDP Stream
+
 ## 🔨 v4l-utils
 ```
 $ sudo apt-get install v4l-utils
@@ -89,7 +107,7 @@ $ make
 $ sudo make install
 ```
 
-## 🚀 実行
+## 🚀 Running
 ```
 $ sudo avconv -i /dev/video0 -f video4linux2 -list_formats all
 $ sudo avconv -f video4linux2 -list_formats all -i /dev/video0
