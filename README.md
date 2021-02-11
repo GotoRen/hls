@@ -127,7 +127,7 @@ $ cd x265
 
 ### 実行
 $ cd build/linux
-$ ./make-Makefiles.bash
+$ sudo ./make-Makefiles.bash
    >> qを押す（変更無し）
 $ sudo make
 $ sudo make install
