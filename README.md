@@ -159,7 +159,7 @@ $ sudo make install
 ```
 ### インストール
 $ sudo wget https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz
-$ tar xzvf opus-1.3.1.tar.gz
+$ tar xzvf opus-1.3.1.tar.gz
 $ cd opus-1.3.1
 
 ### 実行
@@ -190,6 +190,7 @@ Usage: /sbin/alsa {unload|reload|force-unload|force-reload|suspend|resume}
 ## 🔨 FFmpeg
 ```
 ### インストール
+$ sudo apt install ffmpeg
 $ cd $HOME
 $ mkdir git
 $ cd git
