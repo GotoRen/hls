@@ -102,6 +102,7 @@
   ```
 - __🔨 ffmpeg__
   ```
+  $ sudo apt-get install ffmpeg√
   $ cd FFmpeg/
   $ PKG_CONFIG_PATH=/opt/intel/mediasdk/lib/pkgconfig ./configure --prefix=/usr/local/ffmpeg --extra-cflags="-I/opt/intel/mediasdk/include" --extra-ldflags="-L/opt/intel/mediasdk/lib" --extra-ldflags="-L/opt/intel/mediasdk/plugins" --enable-vaapi --disable-debug --enable-libvorbis --enable-libvpx  --enable-gpl --cpu=native --enable-libfdk-aac --enable-libx264 --enable-libx265 --extra-libs=-lpthread --enable-nonfree
   $ sudo make
