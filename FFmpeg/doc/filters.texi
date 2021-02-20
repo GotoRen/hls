@@ -1936,10 +1936,10 @@ stream ends. The default value is 2 seconds.
 Specify weight of each input audio stream as sequence.
 Each weight is separated by space. By default all inputs have same weight.
 
-@item sum
-Do not scale inputs but instead do only summation of samples.
-Beware of heavy clipping if inputs are not normalized prior of filtering
-or output from @var{amix} normalized after filtering. By default is disabled.
+@item normalize
+Always scale inputs instead of only doing summation of samples.
+Beware of heavy clipping if inputs are not normalized prior or after filtering
+by this filter if this option is disabled. By default is enabled.
 @end table
 
 @subsection Commands
@@ -14816,6 +14816,33 @@ This filter supports the following commands:
 Syntax is same as option with same name.
 @end table
 
+@section monochrome
+Convert video to gray using custom color filter.
+
+A description of the accepted options follows.
+
+@table @option
+@item cb
+Set the chroma blue spot. Allowed range is from -1 to 1.
+Default value is 0.
+
+@item cr
+Set the chroma red spot. Allowed range is from -1 to 1.
+Default value is 0.
+
+@item size
+Set the color filter size. Allowed range is from .1 to 10.
+Default value is 1.
+
+@item high
+Set the highlights strength. Allowed range is from 0 to 1.
+Default value is 0.
+@end table
+
+@subsection Commands
+
+This filter supports the all above options as @ref{commands}.
+
 @section mpdecimate
 
 Drop frames that do not differ greatly from the previous frame in
@@ -16190,6 +16217,10 @@ Set window X position, relative offset on X axis.
 @item wy
 Set window Y position, relative offset on Y axis.
 @end table
+
+@subsection Commands
+
+This filter supports same @ref{commands} as options.
 
 @section pp
 
@@ -21235,6 +21266,27 @@ otherwise colors will be less saturated, more towards gray.
 
 This filter supports the all above options as @ref{commands}.
 
+@section vif
+
+Obtain the average VIF (Visual Information Fidelity) between two input videos.
+
+This filter takes two input videos.
+
+Both input videos must have the same resolution and pixel format for
+this filter to work correctly. Also it assumes that both inputs
+have the same number of frames, which are compared one by one.
+
+The obtained average VIF score is printed through the logging system.
+
+The filter stores the calculated VIF score of each frame.
+
+In the below example the input file @file{main.mpg} being processed is compared
+with the reference file @file{ref.mpg}.
+
+@example
+ffmpeg -i main.mpg -i ref.mpg -lavfi vif -f null -
+@end example
+
 @anchor{vignette}
 @section vignette
 
@@ -22393,6 +22445,13 @@ Possible values are:
 
 @item npl
 Set the nominal peak luminance.
+
+@item param_a
+Parameter A for scaling filters. Parameter "b" for bicubic, and the number of
+filter taps for lanczos.
+
+@item param_b
+Parameter B for scaling filters. Parameter "c" for bicubic.
 @end table
 
 The values of the @option{w} and @option{h} options are expressions
