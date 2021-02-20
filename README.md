@@ -23,6 +23,7 @@
   $ git clone https://github.com/GotoRen/hls
   $ sudo apt-get -y install autoconf automake build-essential cmake git libass-dev libfreetype6-dev libgpac-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev mercurial pkg-config texi2html zlib1g-dev
   ```
+- `$ cd ffmpeg-configuration/` 
 - __🔨 nasm__
   ```
   $ cd nasm-2.15.05/
@@ -189,7 +190,7 @@
 - 🔨 __x265__
   ```
   $ git clone https://github.com/videolan/x265.git
-  $ cd x265
+  $ cd x265/
   
   $ cd build/linux
   $ sudo ./make-Makefiles.bash
@@ -209,7 +210,7 @@
   ```
   $ sudo wget https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz
   $ tar xzvf opus-1.3.1.tar.gz
-  $ cd opus-1.3.1
+  $ cd opus-1.3.1/
   
   $ sudo ./configure
   $ sudo make
